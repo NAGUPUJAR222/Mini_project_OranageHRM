@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-12-28T16:16:25 IST" name="Suite" finished-at="2023-12-28T16:17:15 IST" duration-ms="49886">
+    <groups>
+    </groups>
+    <test started-at="2023-12-28T16:16:25 IST" name="Test" finished-at="2023-12-28T16:17:15 IST" duration-ms="49886">
+      <class name="orange.LoginPage">
+        <test-method signature="verifyLogin()[pri:0, instance:orange.LoginPage@43195e57]" started-at="2023-12-28T16:16:25 IST" name="verifyLogin" finished-at="2023-12-28T16:17:15 IST" duration-ms="49760" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLogin -->
+      </class> <!-- orange.LoginPage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
