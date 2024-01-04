@@ -39,6 +39,14 @@
 				
 			</suiteXmlFiles>
 			
+			<systemPropertyVariables>
+				
+				
+				<browser>%Browser%</browser>
+			</systemPropertyVariables>
+			
+			
+			
 		</configuration>
 		 
 		 </plugin>
@@ -62,12 +70,14 @@
     </dependency>
     
     
+   <!-- https://mvnrepository.com/artifact/org.testng/testng -->
     <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.8.0</version>
+    <version>7.7.1</version>
     <scope>test</scope>
     </dependency>
+
     
     
      <dependency>
