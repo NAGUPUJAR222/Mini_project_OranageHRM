@@ -1,4 +1,4 @@
-package orange;
+package com.orange.testCases;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,25 +7,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LoginPage {
+public class BaseClass {
 	
-	@Parameters("Browser")
+	public static WebDriver driver=null;
+	
+	@BeforeClass
+	@Parameters()
 	@Test
-	public void verifyLogin(String browserName)
+	
+	public void verifyLogin(@Optional("chrome")String browserName)
 	{
-		System.out.println("Paramter value is " +browserName);
-		WebDriver driver=null;
+		System.out.println("Parameter value is " +browserName);
+		
 		if (browserName.contains("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
 			 driver=new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		}
 		 
 		else if (browserName.contains("firefox"))
@@ -34,6 +42,7 @@ public class LoginPage {
 			driver=new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		}
 		
 		else if (browserName.contains("ie"))
@@ -42,14 +51,14 @@ public class LoginPage {
 			driver=new InternetExplorerDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		}
-
-		
-		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		driver.findElement(By.name("username")).sendKeys("Admin");
-		driver.findElement(By.name("password")).sendKeys("admin123");
-		driver.findElement(By.xpath("//button[.=' Login ']")).click();
-		driver.close();
+}
+	
+	@AfterClass
+	public void tearDown()
+	{
+		driver.quit();
 	}
 
 }
