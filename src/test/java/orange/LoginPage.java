@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ public class LoginPage {
 	
 	@Parameters("Browser")
 	@Test
-	public void verifyLogin(String browserName)
+	public void verifyLogin(@Optional("firefox") String browserName)
 	{
 		System.out.println("Paramter value is " +browserName);
 		WebDriver driver=null;
