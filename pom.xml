@@ -34,16 +34,8 @@
           <version>3.2.3</version>
         
         <configuration>
-			<suiteXmlFiles>
-			  <suiteXmlFile>testng.xml</suiteXmlFile>
-				
-			</suiteXmlFiles>
 			
-			<systemPropertyVariables>
-				
-				
-				<browser>%Browser%</browser>
-			</systemPropertyVariables>
+			
 			
 			
 			

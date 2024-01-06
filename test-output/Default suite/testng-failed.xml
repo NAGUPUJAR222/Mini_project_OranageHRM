@@ -6,8 +6,8 @@
       <class name="com.orange.testCases.TC_LOGINTEST">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyLogin"/>
-          <include name="verifyLogin"/>
+          <include name="LauchBrowser"/>
+          <include name="adminbtn"/>
         </methods>
       </class> <!-- com.orange.testCases.TC_LOGINTEST -->
     </classes>
